@@ -67,12 +67,7 @@
     </div>
     
     <div class="player-container">
-      <iframe
-        src="https://promodj.com/embed/1234567/small"
-        frameborder="0"
-        allowfullscreen
-        title="Трек 2: Deep House Vibes"
-      ></iframe>
+<iframe src="//promodj.com/embed/7906776/cover" width="100%" height="300" style="min-width: 450px; max-width: 900px" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </body>
