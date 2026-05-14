@@ -59,7 +59,7 @@
   <div class="player-list">
     <div class="player-container">
       <iframe
-        src="https://promodj.com/embed/7902053/small"
+        src="https://promodj.com/embed/7902053/cover"
         frameborder="0"
         allowfullscreen
         title="Трек 1: Electro Mix"
