@@ -5,279 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Максим Пенкин</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #1a1a1a;
-            color: #ffffff;
-            min-height: 100vh;
-        }
-
-        .banner {
-            width: 100%;
-            height: 200px;
-            background-image: url('https://sun9-24.userapi.com/impf/LSUcm4GDsDzQa5gVgEasuJFg0q-dRhIpAwTY5w/Ir_iZgFR1hU.jpg?size=1920x768&quality=95&crop=0,0,1584,632&sign=d0581aa784669e503d64c5ef00540dbb&c_uniq_tag=QylABzxvHk8GgF_ERGpsWfKQzqzq9KPLDVWktqFu0pY&type=cover_group');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .profile {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 16px 20px;
-            background: #1e1e1e;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .avatar {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-            flex-shrink: 0;
-        }
-
-        .profile-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .name {
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .bio {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.55);
-            letter-spacing: 0.3px;
-        }
-
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .link-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            text-decoration: none;
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 13px 20px;
-            border-radius: 10px;
-            font-size: 15px;
-            font-weight: 500;
-            letter-spacing: 0.4px;
-            transition: all 0.2s ease;
-        }
-
-        .link-btn:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-1px);
-        }
-
-        .link-btn:active {
-            transform: scale(0.97);
-        }
-
-        .link-btn svg {
-            width: 20px;
-            height: 20px;
-            flex-shrink: 0;
-            fill: currentColor;
-        }
-
-        .playlist-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            letter-spacing: 0.5px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .track {
-            margin-bottom: 14px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 10px;
-            padding: 12px;
-        }
-
-        .track-name {
-            font-size: 13px;
-            font-weight: 500;
-            margin-bottom: 8px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .track iframe {
-            width: 100%;
-            height: 60px;
-            min-width: 280px;
-            max-width: 100%;
-            border: 0;
-            border-radius: 6px;
-        }
-
-        .track-platforms {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .track-platform-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .track-platform-item:hover .track-platform-icon {
-            background: rgba(255, 255, 255, 0.14);
-            border-color: rgba(255, 255, 255, 0.25);
-            transform: translateY(-1px);
-        }
-
-        .track-platform-item:hover .track-platform-label {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .track-platform-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.2s ease;
-        }
-
-        .track-platform-icon svg {
-            width: 28px;
-            height: 28px;
-        }
-
-        .track-platform-label {
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.4);
-            letter-spacing: 0.3px;
-            transition: color 0.2s ease;
-            text-align: center;
-            white-space: nowrap;
-        }
-
-        .contacts {
-            margin-top: 30px;
-            padding-top: 24px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            text-align: center;
-        }
-
-        .contacts-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 14px;
-            letter-spacing: 0.5px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 10px;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .contact-item:hover {
-            color: #ffffff;
-        }
-
-        .contact-item svg {
-            width: 18px;
-            height: 18px;
-            fill: rgba(255, 255, 255, 0.5);
-            flex-shrink: 0;
-        }
-
-        .contact-item:hover svg {
-            fill: #ffffff;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.25);
-            letter-spacing: 0.5px;
-        }
-
-        @media (max-width: 400px) {
-            .banner {
-                height: 140px;
-            }
-            .avatar {
-                width: 56px;
-                height: 56px;
-            }
-            .name {
-                font-size: 18px;
-            }
-            .container {
-                padding: 14px;
-            }
-            .track-platforms {
-                gap: 8px;
-            }
-            .track-platform-icon {
-                width: 42px;
-                height: 42px;
-                border-radius: 10px;
-            }
-            .track-platform-icon svg {
-                width: 24px;
-                height: 24px;
-            }
-            .track-platform-label {
-                font-size: 10px;
-            }
-        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#1a1a1a;color:#fff;min-height:100vh}
+        .banner{width:100%;height:200px;background-image:url('https://sun9-24.userapi.com/impf/LSUcm4GDsDzQa5gVgEasuJFg0q-dRhIpAwTY5w/Ir_iZgFR1hU.jpg?size=1920x768&quality=95&crop=0,0,1584,632&sign=d0581aa784669e503d64c5ef00540dbb&c_uniq_tag=QylABzxvHk8GgF_ERGpsWfKQzqzq9KPLDVWktqFu0pY&type=cover_group');background-size:cover;background-position:center}
+        .profile{display:flex;align-items:center;gap:16px;padding:16px 20px;background:#1e1e1e;border-bottom:1px solid rgba(255,255,255,.06)}
+        .avatar{width:70px;height:70px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.5);box-shadow:0 4px 15px rgba(0,0,0,.4);flex-shrink:0}
+        .name{font-size:20px;font-weight:700;letter-spacing:.5px}
+        .bio{font-size:13px;color:rgba(255,255,255,.55);letter-spacing:.3px}
+        .container{max-width:500px;margin:0 auto;padding:20px}
+        .links{display:flex;flex-direction:column;gap:10px;margin-bottom:30px}
+        .link-btn{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:13px 20px;border-radius:10px;font-size:15px;font-weight:500;letter-spacing:.4px;transition:all .2s ease}
+        .link-btn:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);transform:translateY(-1px)}
+        .link-btn:active{transform:scale(.97)}
+        .link-btn svg{width:20px;height:20px;flex-shrink:0;fill:currentColor}
+        .playlist-title{font-size:18px;font-weight:600;margin-bottom:16px;letter-spacing:.5px;color:rgba(255,255,255,.9)}
+        .track{margin-bottom:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px}
+        .track-name{font-size:13px;font-weight:500;margin-bottom:8px;color:rgba(255,255,255,.7)}
+        .track iframe{width:100%;height:60px;min-width:280px;max-width:100%;border:0;border-radius:6px}
+        .track-platforms{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.06)}
+        .track-platform-item{display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;transition:all .2s ease}
+        .track-platform-item:hover .track-platform-icon{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.25);transform:translateY(-1px)}
+        .track-platform-item:hover .track-platform-label{color:rgba(255,255,255,.8)}
+        .track-platform-icon{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);transition:all .2s ease}
+        .track-platform-icon img{width:28px;height:28px}
+        .track-platform-label{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.3px;transition:color .2s ease;text-align:center;white-space:nowrap}
+        .contacts{margin-top:30px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);text-align:center}
+        .contacts-title{font-size:18px;font-weight:600;margin-bottom:14px;letter-spacing:.5px;color:rgba(255,255,255,.9)}
+        .contact-item{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px;font-size:14px;color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s ease}
+        .contact-item:hover{color:#fff}
+        .contact-item svg{width:18px;height:18px;fill:rgba(255,255,255,.5);flex-shrink:0}
+        .contact-item:hover svg{fill:#fff}
+        .footer{text-align:center;padding:20px;font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.5px}
+        @media(max-width:400px){.banner{height:140px}.avatar{width:56px;height:56px}.name{font-size:18px}.container{padding:14px}.track-platforms{gap:8px}.track-platform-icon{width:42px;height:42px;border-radius:10px}.track-platform-icon img{width:24px;height:24px}.track-platform-label{font-size:10px}}
     </style>
 </head>
 <body>
@@ -285,9 +44,7 @@
     <div class="banner"></div>
 
     <div class="profile">
-        <img class="avatar" 
-             src="https://sun89-2.userapi.com/s/v1/ig2/U46uHnmTIAknXN5belJ2P82d0Xalb_fzVWPJ7dHwAbn0vuadejrONWyyk3Z1xRG4FVzUJkZg8J1oK3pWPDNo2stO.jpg?quality=95&crop=0,420,1080,1080&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080&ava=1&u=zHjw-ysFzVWG1hB9RrSB5axTuwW8tw5Xu8EWuuHd_3Q&cs=100x100" 
-             alt="Аватар">
+        <img class="avatar" src="https://sun89-2.userapi.com/s/v1/ig2/U46uHnmTIAknXN5belJ2P82d0Xalb_fzVWPJ7dHwAbn0vuadejrONWyyk3Z1xRG4FVzUJkZg8J1oK3pWPDNo2stO.jpg?quality=95&crop=0,420,1080,1080&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080&ava=1&u=zHjw-ysFzVWG1hB9RrSB5axTuwW8tw5Xu8EWuuHd_3Q&cs=100x100" alt="Аватар">
         <div class="profile-info">
             <h1 class="name">Максим Пенкин</h1>
             <p class="bio">Автор / Продюсер</p>
@@ -313,96 +70,37 @@
 
         <h2 class="playlist-title">Мои последние треки</h2>
 
-        <!-- Трек 1: Линора - Мой земляк -->
         <div class="track">
             <p class="track-name">Линора - Мой земляк</p>
             <iframe src="https://promodj.com/embed/7906776/big" allowfullscreen></iframe>
         </div>
 
-        <!-- Трек 2: Max Stavrov - Букет Победы -->
         <div class="track">
             <p class="track-name">Max Stavrov - Букет Победы</p>
             <iframe src="https://promodj.com/embed/7902053/big" allowfullscreen></iframe>
             <div class="track-platforms">
-                <!-- Яндекс Музыка -->
                 <a href="https://music.yandex.ru/album/41900391" class="track-platform-item" target="_blank" title="Яндекс Музыка">
-                    <div class="track-platform-icon">
-                        <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#ffbc0d" d="M21.79,8.39l-.09-.43-3.63-.63,2.11-2.85-.25-.27-3.1,1.49.39-3.95-.32-.18-1.89,3.19L12.91,0h-.37l.5,4.6L7.71.33l-.45.13,4.11,5.16L3.24,2.91l-.37.41,7.26,4.13L.11,8.29l-.11.62,10.41,1.13L1.73,17.22l.37.5,10.33-5.62-2.05,9.9h.63l3.96-9.31,2.41,7.29.43-.33-.99-7.41,3.76,4.27.25-.39-2.88-5.29,4.02,1.49.04-.45-3.6-2.66,3.4-.82Z"/>
-                        </svg>
-                    </div>
+                    <div class="track-platform-icon"><img src="icons/yandex.svg" alt="Яндекс"></div>
                     <span class="track-platform-label">Яндекс</span>
                 </a>
-                <!-- ВК Музыка -->
                 <a href="https://music.vk.com/link/s1oil" class="track-platform-item" target="_blank" title="ВК Музыка">
-                    <div class="track-platform-icon">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.48248 7.02943C0.663345 13.8486 0.459342 24.6995 0.453244 45.9994C19.5412 45.9993 31.4588 37.8045 41.9125 30.6162C50.0792 25.0007 57.3524 19.9994 66.4531 19.9994C79.9985 19.9994 91.8256 29.5768 98.0969 34.6552C98.9812 35.3713 99.7551 35.998 100.408 36.4957C100.21 21.3094 99.1447 12.7505 93.4236 7.02943C86.3942 -1.2251e-06 75.0805 -2.21418e-06 52.453 -4.19233e-06L48.453 -4.54202e-06C25.8256 1.10922e-06 14.5119 1.20145e-07 7.48248 7.02943Z" fill="#0077FF"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.45332 45.9994C19.5413 45.9993 31.4589 37.8045 41.9126 30.6162C50.0792 25.0007 57.3525 19.9994 66.4531 19.9994C79.9986 19.9994 91.8257 29.5768 98.0969 34.6552C98.9813 35.3713 99.7552 35.998 100.408 36.4957C100.453 39.9687 100.453 43.7884 100.453 48L100.453 52C100.453 74.6274 100.453 85.9411 93.4237 92.9706C86.7054 99.6888 76.0738 99.9862 55.3922 99.9994L45.5139 99.9994C24.8324 99.9862 14.2008 99.6888 7.48256 92.9706C0.453126 85.9411 0.453127 74.6274 0.453129 52L0.45313 48C0.45313 47.3231 0.45313 46.6563 0.45332 45.9994Z" fill="#F45FFF"/>
-                            <path d="M13.9521 57.4749C13.9521 55.0034 15.9807 52.9999 18.4521 52.9999C20.9236 52.9999 22.9521 55.0034 22.9521 57.4749V62.5249C22.9521 64.9964 20.9236 66.9999 18.4521 66.9999C15.9807 66.9999 13.9521 64.9964 13.9521 62.5249V57.4749Z" fill="white"/>
-                            <path d="M29.9521 57.4749C29.9521 55.0034 31.9807 52.9999 34.4521 52.9999C36.9236 52.9999 38.9521 55.0034 38.9521 57.4749V62.5249C38.9521 64.9964 36.9236 66.9999 34.4521 66.9999C31.9807 66.9999 29.9521 64.9964 29.9521 62.5249V57.4749Z" fill="white"/>
-                            <path d="M45.9541 50.9751C45.9541 48.5036 47.9826 46.5001 50.4541 46.5001C52.9256 46.5001 54.9541 48.5036 54.9541 50.9751V69.0251C54.9541 71.4965 52.9256 73.5001 50.4541 73.5001C47.9826 73.5001 45.9541 71.4965 45.9541 69.0251V50.9751Z" fill="white"/>
-                            <path d="M61.9541 39.4752C61.9541 37.0037 63.9826 35.0002 66.4541 35.0002C68.9256 35.0002 70.9541 37.0037 70.9541 39.4752V80.5252C70.9541 82.9967 68.9256 85.0002 66.4541 85.0002C63.9826 85.0002 61.9541 82.9967 61.9541 80.5252V39.4752Z" fill="white"/>
-                            <path d="M77.9536 50.9751C77.9536 48.5036 79.9821 46.5001 82.4536 46.5001C84.9251 46.5001 86.9536 48.5036 86.9536 50.9751V69.0251C86.9536 71.4965 84.9251 73.5001 82.4536 73.5001C79.9821 73.5001 77.9536 71.4965 77.9536 69.0251V50.9751Z" fill="white"/>
-                        </svg>
-                    </div>
+                    <div class="track-platform-icon"><img src="icons/vk.svg" alt="ВК"></div>
                     <span class="track-platform-label">ВК</span>
                 </a>
-                <!-- МТС Музыка (КИОН) -->
                 <a href="https://music.mts.ru/album/41900391" class="track-platform-item" target="_blank" title="МТС Музыка">
-                    <div class="track-platform-icon">
-                        <svg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <radialGradient id="kionGrad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(250) rotate(135) scale(353.553 276.295)">
-                                    <stop offset="0.06" stop-color="#E4022D"/>
-                                    <stop offset="0.94" stop-color="#5615A4"/>
-                                </radialGradient>
-                                <clipPath id="kionClip">
-                                    <rect width="250" height="250" fill="white"/>
-                                </clipPath>
-                            </defs>
-                            <g clip-path="url(#kionClip)">
-                                <rect width="250" height="250" fill="url(#kionGrad)"/>
-                                <path d="M121.613 112.735L179.653 130.48V105.041L121.613 87.2966V112.735Z" fill="white"/>
-                                <path d="M101.562 120.36C83.7906 120.36 70.3473 133.805 70.3473 151.596C70.3473 169.387 83.7829 182.617 101.562 182.617C119.34 182.617 132.776 169.172 132.776 151.596C132.776 134.02 119.34 120.36 101.562 120.36Z" fill="white"/>
-                                <path d="M121.613 76.7082L179.653 94.453V69.0144L121.613 51.2695V76.7082Z" fill="white"/>
-                            </g>
-                        </svg>
-                    </div>
+                    <div class="track-platform-icon"><img src="icons/mts.svg" alt="МТС"></div>
                     <span class="track-platform-label">МТС</span>
                 </a>
-                <!-- Звук -->
                 <a href="https://zvuk.com/track/179963164" class="track-platform-item" target="_blank" title="Звук">
-                    <div class="track-platform-icon">
-                        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#02CC68" d="M181,73c0,11.7,0,23.4-0.4,35.7c-1.4,14.8-4.4,28.5-11.8,40.9c-9.9,16.5-25.4,24.6-43.5,28.4c-5.4,1.1-10.9,2-16.3,3c-11.7,0-23.4,0-35.7-0.4c-4.3-0.8-7.9-1.1-11.5-1.7c-13.2-2.2-25.7-6.4-36.3-15.1c-13.9-11.4-19.6-27-22.5-44c-0.6-3.3-1.3-6.6-2-9.9c0-2,0-4.1,0.2-6.8c0.1-2.2-0.1-3.7-0.2-5.2c0-8,0-16,0.4-24.7c1.1-5.5,1.7-10.4,2.5-15.3c4.5-28.6,24.3-49,52.6-54c5.5-1,11-2,16.5-3c11.4,0,22.7,0,34.7,0.4c15.4,1.2,29.5,4.4,42.3,12c16.1,9.7,24,25,27.9,42.8C179.1,61.8,180,67.4,181,73zM84.4,24.6c-16.6,0.7-33.1,1.5-47.6,14.5c28.1,4.4,51.5,15.7,70.8,35c19.4,19.4,30.9,42.9,35.3,70.6c6.4-6.2,9.4-12.9,11.1-20.2c4.9-21,4.6-42.2,0.9-63.3c-3.2-18.1-13.5-30.5-32-33.5C110.5,25.6,97.8,25.6,84.4,24.6zM65.8,98.7c18.2,14.1,29.6,32.4,33.4,55.2c0.2,1.2,1.5,3.2,2.2,3.1c6.2-0.3,12.4-0.9,18.5-1.5C118.1,104,73.5,62.9,26.4,62.3c-0.5,5.8-1.2,11.8-1.4,17.7c0,1,1.8,2.7,2.9,2.9C41.6,84.9,53.9,90.4,65.8,98.7zM50.7,152c8.3,1.9,16.6,3.9,25.4,5.9C71.3,128.7,46.5,108.5,24.9,106.4C26.7,125.3,30,143.1,50.7,152z"/>
-                        </svg>
-                    </div>
+                    <div class="track-platform-icon"><img src="icons/zvuk.svg" alt="Звук"></div>
                     <span class="track-platform-label">Звук</span>
                 </a>
-                <!-- Spotify -->
                 <a href="https://open.spotify.com/album/1tOwypT4fQo3Wd6AOyPBhP" class="track-platform-item" target="_blank" title="Spotify">
-                    <div class="track-platform-icon">
-                        <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#1ED760" d="M519.8,0.4C243.9-10.6,11.3,204.2,0.4,480.2c-11,275.9,203.9,508.5,479.8,519.4c275.9,11,508.5-203.8,519.4-479.8C1010.5,243.9,795.7,11.3,519.8,0.4zM730.9,732.9c-6.2,11-18.3,16.5-30.1,14.8c-3.6-0.5-7.2-1.7-10.6-3.6c-66.1-37.6-138.1-62.1-214.1-72.8c-76-10.7-152-7-225.9,11c-16,3.9-32.2-5.9-36.1-22c-3.9-16,5.9-32.2,22-36.1c81.3-19.7,164.8-23.8,248.2-12.1c83.4,11.7,162.6,38.7,235.3,80c14.3,8.2,19.3,26.4,11.2,40.7L730.9,732.9zM796.6,601.6c-10.2,18.8-33.8,25.9-52.6,15.7c-77.3-41.8-161-69.3-248.8-81.6c-87.8-12.3-175.8-9-261.7,9.9c-4.7,1-9.3,1.2-13.8,0.5c-15.6-2.2-28.9-13.8-32.5-30.1c-4.6-20.9,8.6-41.6,29.6-46.2c94.9-20.9,192.2-24.6,289.2-11c96.9,13.6,189.5,44,274.9,90.2c18.9,10.2,25.9,33.7,15.7,52.6V601.6zM869.4,453.7c-9.6,18.5-29.6,28-49,25.3c-5.3-0.7-10.4-2.4-15.4-4.9c-90-46.8-187-77.8-288.2-92s-203-11.2-302.4,9c-25.9,5.3-51-11.5-56.3-37.3c-5.3-25.9,11.5-51,37.3-56.3c110.1-22.3,222.7-25.7,334.8-10s219.3,50,319,101.9c23.4,12.2,32.5,41,20.3,64.4V453.7z"/>
-                        </svg>
-                    </div>
+                    <div class="track-platform-icon"><img src="icons/spotify.svg" alt="Spotify"></div>
                     <span class="track-platform-label">Spotify</span>
                 </a>
-                <!-- Apple Music -->
                 <a href="https://music.apple.com/ru/album/1896233462" class="track-platform-item" target="_blank" title="Apple Music">
-                    <div class="track-platform-icon">
-                        <svg viewBox="0 0 361 361" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="appleGrad" gradientUnits="userSpaceOnUse" x1="180" y1="358.6" x2="180" y2="7.8">
-                                    <stop offset="0" stop-color="#FA233B"/>
-                                    <stop offset="1" stop-color="#FB5C74"/>
-                                </linearGradient>
-                            </defs>
-                            <path fill="url(#appleGrad)" d="M360,112.61c0-4.3,0-8.6-0.02-12.9c-0.02-3.62-0.06-7.24-0.16-10.86c-0.21-7.89-0.68-15.84-2.08-23.64c-1.42-7.92-3.75-15.29-7.41-22.49c-3.6-7.07-8.3-13.53-13.91-19.14c-5.61-5.61-12.08-10.31-19.15-13.91c-7.19-3.66-14.56-5.98-22.47-7.41c-7.8-1.4-15.76-1.87-23.65-2.08c-3.62-0.1-7.24-0.14-10.86-0.16C255.99,0,251.69,0,247.39,0H112.61c-4.3,0-8.6,0-12.9,0.02c-3.62,0.02-7.24,0.06-10.86,0.16C80.96,0.4,73,0.86,65.2,2.27c-7.92,1.42-15.28,3.75-22.47,7.41c-7.07,3.6-13.54,8.3-19.15,13.91c-5.61,5.61-10.31,12.07-13.91,19.14c-3.66,7.2-5.99,14.57-7.41,22.49c-1.4,7.8-1.87,15.76-2.08,23.64c-0.1,3.62-0.14,7.24-0.16,10.86C0,104.01,0,108.31,0,112.61v134.77c0,4.3,0,8.6,0.02,12.9c0.02,3.62,0.06,7.24,0.16,10.86c0.21,7.89,0.68,15.84,2.08,23.64c1.42,7.92,3.75,15.29,7.41,22.49c3.6,7.07,8.3,13.53,13.91,19.14c5.61,5.61,12.08,10.31,19.15,13.91c7.19,3.66,14.56,5.98,22.47,7.41c7.8,1.4,15.76,1.87,23.65,2.08c3.62,0.1,7.24,0.14,10.86,0.16c4.3,0.03,8.6,0.02,12.9,0.02h134.77c4.3,0,8.6,0,12.9-0.02c3.62-0.02,7.24-0.06,10.86-0.16c7.89-0.21,15.85-0.68,23.65-2.08c7.92-1.42,15.28-3.75,22.47-7.41c7.07-3.6,13.54-8.3,19.15-13.91c5.61-5.61,10.31-12.07,13.91-19.14c3.66-7.2,5.99-14.57,7.41-22.49c1.4-7.8,1.87-15.76,2.08-23.64c0.1-3.62,0.14-7.24,0.16-10.86c0.03-4.3,0.02-8.6,0.02-12.9V112.61z"/>
-                            <path fill="#FFFFFF" d="M254.5,55c-0.87,0.08-8.6,1.45-9.53,1.64l-107,21.59l-0.04,0.01c-2.79,0.59-4.98,1.58-6.67,3c-2.04,1.71-3.17,4.13-3.6,6.95c-0.09,0.6-0.24,1.82-0.24,3.62c0,0,0,109.32,0,133.92c0,3.13-0.25,6.17-2.37,8.76c-2.12,2.59-4.74,3.37-7.81,3.99c-2.33,0.47-4.66,0.94-6.99,1.41c-8.84,1.78-14.59,2.99-19.8,5.01c-4.98,1.93-8.71,4.39-11.68,7.51c-5.89,6.17-8.28,14.54-7.46,22.38c0.7,6.69,3.71,13.09,8.88,17.82c3.49,3.2,7.85,5.63,12.99,6.66c5.33,1.07,11.01,0.7,19.31-0.98c4.42-0.89,8.56-2.28,12.5-4.61c3.9-2.3,7.24-5.37,9.85-9.11c2.62-3.75,4.31-7.92,5.24-12.35c0.96-4.57,1.19-8.7,1.19-13.26l0-116.15c0-6.22,1.76-7.86,6.78-9.08c0,0,88.94-17.94,93.09-18.75c5.79-1.11,8.52,0.54,8.52,6.61l0,79.29c0,3.14-0.03,6.32-2.17,8.92c-2.12,2.59-4.74,3.37-7.81,3.99c-2.33,0.47-4.66,0.94-6.99,1.41c-8.84,1.78-14.59,2.99-19.8,5.01c-4.98,1.93-8.71,4.39-11.68,7.51c-5.89,6.17-8.49,14.54-7.67,22.38c0.7,6.69,3.92,13.09,9.09,17.82c3.49,3.2,7.85,5.56,12.99,6.6c5.33,1.07,11.01,0.69,19.31-0.98c4.42-0.89,8.56-2.22,12.5-4.55c3.9-2.3,7.24-5.37,9.85-9.11c2.62-3.75,4.31-7.92,5.24-12.35c0.96-4.57,1-8.7,1-13.26V64.46C263.54,58.3,260.29,54.5,254.5,55z"/>
-                        </svg>
-                    </div>
+                    <div class="track-platform-icon"><img src="icons/apple.svg" alt="Apple"></div>
                     <span class="track-platform-label">Apple</span>
                 </a>
             </div>
@@ -422,9 +120,7 @@
 
     </div>
 
-    <div class="footer">
-        © 2026 Максим Пенкин
-    </div>
+    <div class="footer">© 2026 Максим Пенкин</div>
 
 </body>
 </html>
