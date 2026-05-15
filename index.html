@@ -171,39 +171,21 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
             text-decoration: none;
             transition: all 0.2s ease;
-            background-size: 24px 24px;
-            background-repeat: no-repeat;
-            background-position: center;
+        }
+
+        .track-platform-icon svg {
+            width: 22px;
+            height: 22px;
         }
 
         .track-platform-icon:hover {
-            background-color: rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.14);
             border-color: rgba(255, 255, 255, 0.25);
             transform: translateY(-1px);
         }
 
         .track-platform-icon:active {
             transform: scale(0.93);
-        }
-
-        /* Иконки через favicon Яндекса */
-        .track-platform-icon.ya-music {
-            background-image: url("https://favicon.yandex.net/favicon/v2/https://music.yandex.ru?size=24&stub=1");
-        }
-        .track-platform-icon.vk-music {
-            background-image: url("https://favicon.yandex.net/favicon/v2/https://music.vk.com?size=24&stub=1");
-        }
-        .track-platform-icon.mts-music {
-            background-image: url("https://favicon.yandex.net/favicon/v2/https://music.mts.ru?size=24&stub=1");
-        }
-        .track-platform-icon.zvuk {
-            background-image: url("https://favicon.yandex.net/favicon/v2/https://zvuk.com?size=24&stub=1");
-        }
-        .track-platform-icon.spotify {
-            background-image: url("https://favicon.yandex.net/favicon/v2/https://open.spotify.com?size=24&stub=1");
-        }
-        .track-platform-icon.apple-music {
-            background-image: url("https://favicon.yandex.net/favicon/v2/https://music.apple.com?size=24&stub=1");
         }
 
         /* КОНТАКТЫ */
@@ -277,6 +259,10 @@
                 height: 34px;
                 border-radius: 8px;
             }
+            .track-platform-icon svg {
+                width: 18px;
+                height: 18px;
+            }
         }
     </style>
 </head>
@@ -330,17 +316,51 @@
             <iframe src="https://promodj.com/embed/7902053/big" allowfullscreen></iframe>
             <div class="track-platforms">
                 <!-- Яндекс Музыка -->
-                <a href="https://music.yandex.ru/album/41900391" class="track-platform-icon ya-music" target="_blank" title="Яндекс Музыка"></a>
+                <a href="https://music.yandex.ru/album/41900391" class="track-platform-icon" target="_blank" title="Яндекс Музыка">
+                    <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#ffbc0d" d="M21.79,8.39l-.09-.43-3.63-.63,2.11-2.85-.25-.27-3.1,1.49.39-3.95-.32-.18-1.89,3.19L12.91,0h-.37l.5,4.6L7.71.33l-.45.13,4.11,5.16L3.24,2.91l-.37.41,7.26,4.13L.11,8.29l-.11.62,10.41,1.13L1.73,17.22l.37.5,10.33-5.62-2.05,9.9h.63l3.96-9.31,2.41,7.29.43-.33-.99-7.41,3.76,4.27.25-.39-2.88-5.29,4.02,1.49.04-.45-3.6-2.66,3.4-.82Z"/>
+                    </svg>
+                </a>
                 <!-- ВК Музыка -->
-                <a href="https://music.vk.com/link/s1oil" class="track-platform-icon vk-music" target="_blank" title="ВК Музыка"></a>
+                <a href="https://music.vk.com/link/s1oil" class="track-platform-icon" target="_blank" title="ВК Музыка">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.48248 7.02943C0.663345 13.8486 0.459342 24.6995 0.453244 45.9994C19.5412 45.9993 31.4588 37.8045 41.9125 30.6162C50.0792 25.0007 57.3524 19.9994 66.4531 19.9994C79.9985 19.9994 91.8256 29.5768 98.0969 34.6552C98.9812 35.3713 99.7551 35.998 100.408 36.4957C100.21 21.3094 99.1447 12.7505 93.4236 7.02943C86.3942 -1.2251e-06 75.0805 -2.21418e-06 52.453 -4.19233e-06L48.453 -4.54202e-06C25.8256 1.10922e-06 14.5119 1.20145e-07 7.48248 7.02943Z" fill="#0077FF"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.45332 45.9994C19.5413 45.9993 31.4589 37.8045 41.9126 30.6162C50.0792 25.0007 57.3525 19.9994 66.4531 19.9994C79.9986 19.9994 91.8257 29.5768 98.0969 34.6552C98.9813 35.3713 99.7552 35.998 100.408 36.4957C100.453 39.9687 100.453 43.7884 100.453 48L100.453 52C100.453 74.6274 100.453 85.9411 93.4237 92.9706C86.7054 99.6888 76.0738 99.9862 55.3922 99.9994L45.5139 99.9994C24.8324 99.9862 14.2008 99.6888 7.48256 92.9706C0.453126 85.9411 0.453127 74.6274 0.453129 52L0.45313 48C0.45313 47.3231 0.45313 46.6563 0.45332 45.9994Z" fill="#F45FFF"/>
+                        <path d="M13.9521 57.4749C13.9521 55.0034 15.9807 52.9999 18.4521 52.9999C20.9236 52.9999 22.9521 55.0034 22.9521 57.4749V62.5249C22.9521 64.9964 20.9236 66.9999 18.4521 66.9999C15.9807 66.9999 13.9521 64.9964 13.9521 62.5249V57.4749Z" fill="white"/>
+                        <path d="M29.9521 57.4749C29.9521 55.0034 31.9807 52.9999 34.4521 52.9999C36.9236 52.9999 38.9521 55.0034 38.9521 57.4749V62.5249C38.9521 64.9964 36.9236 66.9999 34.4521 66.9999C31.9807 66.9999 29.9521 64.9964 29.9521 62.5249V57.4749Z" fill="white"/>
+                        <path d="M45.9541 50.9751C45.9541 48.5036 47.9826 46.5001 50.4541 46.5001C52.9256 46.5001 54.9541 48.5036 54.9541 50.9751V69.0251C54.9541 71.4965 52.9256 73.5001 50.4541 73.5001C47.9826 73.5001 45.9541 71.4965 45.9541 69.0251V50.9751Z" fill="white"/>
+                        <path d="M61.9541 39.4752C61.9541 37.0037 63.9826 35.0002 66.4541 35.0002C68.9256 35.0002 70.9541 37.0037 70.9541 39.4752V80.5252C70.9541 82.9967 68.9256 85.0002 66.4541 85.0002C63.9826 85.0002 61.9541 82.9967 61.9541 80.5252V39.4752Z" fill="white"/>
+                        <path d="M77.9536 50.9751C77.9536 48.5036 79.9821 46.5001 82.4536 46.5001C84.9251 46.5001 86.9536 48.5036 86.9536 50.9751V69.0251C86.9536 71.4965 84.9251 73.5001 82.4536 73.5001C79.9821 73.5001 77.9536 71.4965 77.9536 69.0251V50.9751Z" fill="white"/>
+                    </svg>
+                </a>
                 <!-- МТС Музыка (КИОН) -->
-                <a href="https://music.mts.ru/album/41900391" class="track-platform-icon mts-music" target="_blank" title="МТС Музыка"></a>
+                <a href="https://music.mts.ru/album/41900391" class="track-platform-icon" target="_blank" title="МТС Музыка">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="24" height="24" rx="4" fill="#E30613"/>
+                        <ellipse cx="12" cy="13" rx="5.5" ry="6" fill="#fff"/>
+                    </svg>
+                </a>
                 <!-- Звук -->
-                <a href="https://zvuk.com/track/179963164" class="track-platform-icon zvuk" target="_blank" title="Звук"></a>
+                <a href="https://zvuk.com/track/179963164" class="track-platform-icon" target="_blank" title="Звук">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="11" fill="#fff"/>
+                        <path d="M8 8h6l-6 8h6" stroke="#000" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
                 <!-- Spotify -->
-                <a href="https://open.spotify.com/album/1tOwypT4fQo3Wd6AOyPBhP" class="track-platform-icon spotify" target="_blank" title="Spotify"></a>
+                <a href="https://open.spotify.com/album/1tOwypT4fQo3Wd6AOyPBhP" class="track-platform-icon" target="_blank" title="Spotify">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="11" fill="#1DB954"/>
+                        <path d="M8 8.5c2-.8 4-.8 5.5-.3M8 11.5c1.5-.6 3-.6 4-.2M9 14.5c1-.4 2-.4 2.5-.1" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </a>
                 <!-- Apple Music -->
-                <a href="https://music.apple.com/ru/album/1896233462" class="track-platform-icon apple-music" target="_blank" title="Apple Music"></a>
+                <a href="https://music.apple.com/ru/album/1896233462" class="track-platform-icon" target="_blank" title="Apple Music">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="24" height="24" rx="6" fill="#FA2C55"/>
+                        <path d="M15 7.5v7c0 1.4-1.1 2.5-2.5 2.5S10 15.9 10 14.5s1.1-2.5 2.5-2.5c.3 0 .5.1.7.2V8l5-1.5v5.5c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5c.3 0 .5.1.7.2V7l-3.7 1.1v.2l3.7-1.1v.3z" fill="#fff"/>
+                    </svg>
+                </a>
             </div>
         </div>
 
